@@ -1,0 +1,22 @@
+<?php
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\GameController;
+
+Route::post('/auth/signin', [AuthController::class, 'login']);
+Route::post('/auth/register', [AuthController::class, 'register']);
+
+Route::middleware('auth:sanctum')->group(function () {
+Route::put('/menu/editor', [MenuController::class, 'createPet']);
+Route::patch('/menu/editor', [MenuController::class, 'renamePet']);
+Route::delete('/menu/editor', [MenuController::class, 'deletePet']);
+Route::post('/menu/logout', [MenuController::class, 'exitMenu']);
+Route::get('/menu/pet', [MenuController::class, 'getPet']);
+
+Route::post('/game/{pet}/play', [GameController::class, 'playPet']);
+Route::post('/game/{pet}/feed', [GameController::class, 'feedPet']);
+Route::post('/game/{pet}/sleep', [GameController::class, 'sleepPet']);
+Route::post('/game/{pet}/heal', [GameController::class, 'healPet']);
+});

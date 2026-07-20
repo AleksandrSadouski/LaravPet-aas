@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('mood')->default(100);
             $table->integer('hunger')->default(100);
             $table->integer('energy')->default(100);
-            $table->timestamps('last_updated')->useCurrent();
+            $table->timestamp('last_updated')->useCurrent();
             $table->timestamps();
         });
     }
