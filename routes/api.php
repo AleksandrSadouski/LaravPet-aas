@@ -5,8 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\GameController;
 
-Route::post('/auth/signin', [AuthController::class, 'login']);
-Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/signin', [AuthController::class, 'login'])->middleware('throttle:3,1');
+Route::post('/auth/register', [AuthController::class, 'register'])->middleware('throttle:6,1');
 
 Route::middleware('auth:sanctum')->group(function () {
 Route::put('/menu/editor', [MenuController::class, 'createPet']);
