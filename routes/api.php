@@ -15,8 +15,8 @@ Route::delete('/menu/editor', [MenuController::class, 'deletePet']);
 Route::post('/menu/logout', [MenuController::class, 'exitMenu']);
 Route::get('/menu/pet', [MenuController::class, 'getPet']);
 
-Route::post('/game/{pet}/play', [GameController::class, 'playPet']);
-Route::post('/game/{pet}/feed', [GameController::class, 'feedPet']);
-Route::post('/game/{pet}/sleep', [GameController::class, 'sleepPet']);
-Route::post('/game/{pet}/heal', [GameController::class, 'healPet']);
+Route::post('/game/play', [GameController::class, 'playPet']);
+Route::post('/game/feed', [GameController::class, 'feedPet']);
+Route::post('/game/sleep', [GameController::class, 'sleepPet']);
+Route::post('/game/heal', [GameController::class, 'healPet']);
 });

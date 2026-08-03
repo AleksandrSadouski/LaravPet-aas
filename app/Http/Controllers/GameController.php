@@ -7,15 +7,23 @@ use App\Models\Pet;
 
 class GameController extends Controller
 {
-    public function playPet(Request $request, Pet $pet)
-    {}
+    public function playPet(Request $request)
+    {
 
-    public function feedPet(Request $request, Pet $pet)
-    {}
+    }
 
-    public function sleepPet(Request $request, Pet $pet)
-    {}
+    public function feedPet(Request $request)
+    {
 
-    public function healPet(Request $request, Pet $pet)
-    {}
+    }
+
+    public function sleepPet(Request $request)
+    {
+
+    }
+
+    public function healPet(Request $request)
+    {
+
+    }
 }
