@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\PetResource;
 
 class PlayerResource extends JsonResource
 {
@@ -12,6 +13,7 @@ class PlayerResource extends JsonResource
         return ['id' => $this->id,
         'name' => $this->name,
         'pet_amt' => $this->pet_amt,
-        'points' => $this->points];
+        'points' => $this->points,
+        'pet' => new PetResource($this->whenLoaded('pet'))];
     }
 }

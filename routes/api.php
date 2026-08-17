@@ -12,7 +12,7 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::put('/menu/editor', [MenuController::class, 'createPet']);
 Route::patch('/menu/editor', [MenuController::class, 'renamePet']);
 Route::delete('/menu/editor', [MenuController::class, 'deletePet']);
-Route::post('/menu/logout', [MenuController::class, 'exitMenu']);
+Route::delete('/menu/logout', [MenuController::class, 'exitMenu']);
 Route::get('/menu/pet', [MenuController::class, 'getPet']);
 
 Route::post('/game/play', [GameController::class, 'playPet']);
