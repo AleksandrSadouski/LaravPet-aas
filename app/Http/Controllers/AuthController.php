@@ -23,7 +23,10 @@ class AuthController extends Controller
             }
         $player->tokens()->delete();
         $token = $player->createToken('auth-token')->plainTextToken;
-        return response()->json(['player' => new PlayerResource($player), 'token' => $token]);        
+        return response()->json(['status' => 'success',
+        'message' => 'Successful login to player',
+        'player' => new PlayerResource($player), 
+        'token' => $token], 200);        
     }
     
     public function register(RegisterRequest $request)
@@ -35,6 +38,9 @@ class AuthController extends Controller
         $player->password = $password;
         $player->save();
         $token = $player->createToken('auth-token')->plainTextToken;
-        return response()->json(['player' => new PlayerResource($player), 'token' => $token]);
+        return response()->json(['status' => 'success',
+        'message' => 'Successful player creation'
+        'player' => new PlayerResource($player), 
+        'token' => $token], 200);
     }
 }

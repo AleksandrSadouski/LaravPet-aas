@@ -9,7 +9,7 @@ class GameController extends Controller
 {
     public function playPet(Request $request)
     {
-
+        
     }
 
     public function feedPet(Request $request)
